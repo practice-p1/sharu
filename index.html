@@ -1,0 +1,2237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sharu | Child Artist</title>
+
+<meta name="description" content="Sharu - Child Artist from Hyderabad. Portfolio, photos, videos and casting enquiries.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   BASIC
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#070707;
+    color:#fff;
+    font-family:"Inter",sans-serif;
+    overflow-x:hidden;
+}
+
+:root{
+    --gold:#d6b06a;
+    --gold2:#f0d49a;
+    --black:#070707;
+    --dark:#0d0d0d;
+    --grey:#929292;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img,
+video{
+    max-width:100%;
+    display:block;
+}
+
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+.loader{
+    position:fixed;
+    inset:0;
+    background:#070707;
+    z-index:99999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:1s;
+}
+
+.loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader h1{
+    font-family:"Cormorant Garamond",serif;
+    font-size:75px;
+    font-weight:500;
+    letter-spacing:12px;
+}
+
+.loader span{
+    color:var(--gold);
+}
+
+.loader-line{
+    width:0;
+    height:1px;
+    background:var(--gold);
+    margin:20px auto;
+    animation:load 1.4s forwards;
+}
+
+@keyframes load{
+    to{
+        width:180px;
+    }
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:28px 6%;
+    z-index:5000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    transition:.4s;
+}
+
+.navbar.scrolled{
+    padding:16px 6%;
+    background:rgba(7,7,7,.92);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+    font-family:"Cormorant Garamond",serif;
+    font-size:34px;
+    letter-spacing:4px;
+}
+
+.logo span{
+    color:var(--gold);
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+.nav-links a{
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:#ddd;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+.menu{
+    display:none;
+    font-size:26px;
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    height:100vh;
+    min-height:700px;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:flex-end;
+}
+
+/* HERO IMAGE IS HERE */
+
+.hero-image{
+    position:absolute;
+    inset:0;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.90) 0%,
+            rgba(0,0,0,.60) 42%,
+            rgba(0,0,0,.10) 100%
+        ),
+        linear-gradient(
+            0deg,
+            #070707 0%,
+            transparent 45%
+        ),
+        url("hero.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    transform:scale(1.03);
+}
+
+/* small gold cinematic line */
+
+.hero-image::after{
+    content:"";
+    position:absolute;
+    right:7%;
+    top:30%;
+    width:1px;
+    height:180px;
+    background:linear-gradient(
+        transparent,
+        var(--gold),
+        transparent
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    padding:0 7% 85px;
+    max-width:1000px;
+}
+
+.hero-label{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:5px;
+    font-size:11px;
+    margin-bottom:22px;
+}
+
+.hero-title{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(100px,18vw,240px);
+    font-weight:500;
+    line-height:.72;
+    letter-spacing:-7px;
+}
+
+.hero-title span{
+    color:var(--gold);
+}
+
+.hero-subtitle{
+    margin-top:35px;
+    max-width:570px;
+    color:#d1d1d1;
+    line-height:1.9;
+    font-size:14px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:32px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:15px 27px;
+    border:1px solid var(--gold);
+    color:#fff;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:10px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:var(--gold);
+    color:#000;
+}
+
+.btn.gold{
+    background:var(--gold);
+    color:#000;
+}
+
+.scroll-text{
+    position:absolute;
+    right:6%;
+    bottom:35px;
+    color:#777;
+    font-size:9px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+
+/* =========================================================
+   COMMON SECTIONS
+========================================================= */
+
+section{
+    padding:130px 7%;
+}
+
+.section-number{
+    color:var(--gold);
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:4px;
+}
+
+.section-title{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(55px,8vw,105px);
+    font-weight:500;
+    line-height:.85;
+    margin-top:16px;
+}
+
+.section-title span{
+    color:var(--gold);
+}
+
+.section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:40px;
+    margin-bottom:60px;
+}
+
+.section-description{
+    max-width:420px;
+    color:#888;
+    line-height:1.9;
+    font-size:13px;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile{
+    background:#0b0b0b;
+}
+
+.profile-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:90px;
+    align-items:center;
+}
+
+.profile-photo{
+    position:relative;
+}
+
+.profile-photo img{
+    width:100%;
+    height:650px;
+    object-fit:cover;
+}
+
+.profile-photo::before{
+    content:"";
+    position:absolute;
+    left:-20px;
+    bottom:-20px;
+    width:150px;
+    height:150px;
+    border-left:1px solid var(--gold);
+    border-bottom:1px solid var(--gold);
+}
+
+.profile-text h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:48px;
+    font-weight:500;
+    line-height:1.05;
+    margin-bottom:25px;
+}
+
+.profile-text p{
+    color:#929292;
+    line-height:2;
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+.details{
+    border-top:1px solid #292929;
+    margin-top:35px;
+}
+
+.detail{
+    display:flex;
+    justify-content:space-between;
+    padding:17px 0;
+    border-bottom:1px solid #292929;
+}
+
+.detail small{
+    color:#666;
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.detail strong{
+    font-family:"Cormorant Garamond",serif;
+    font-size:22px;
+    font-weight:500;
+}
+
+
+/* =========================================================
+   ABOUT STRIP
+========================================================= */
+
+.about-strip{
+    background:#070707;
+    text-align:center;
+    padding:100px 7%;
+}
+
+.about-strip h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(50px,8vw,105px);
+    font-weight:500;
+    line-height:.9;
+}
+
+.about-strip h2 span{
+    color:var(--gold);
+}
+
+.about-strip p{
+    max-width:650px;
+    margin:30px auto 0;
+    color:#888;
+    line-height:1.9;
+    font-size:14px;
+}
+
+
+/* =========================================================
+   PHOTO GALLERY
+========================================================= */
+
+.gallery{
+    background:#0a0a0a;
+}
+
+.gallery-intro{
+    max-width:600px;
+    color:#888;
+    line-height:1.9;
+    font-size:13px;
+    margin-bottom:50px;
+}
+
+.photo-grid{
+    display:grid;
+    grid-template-columns:repeat(12,1fr);
+    grid-auto-rows:240px;
+    gap:10px;
+}
+
+.photo{
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;
+    background:#111;
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:1s;
+}
+
+.photo:hover img{
+    transform:scale(1.08);
+}
+
+.photo::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    opacity:0;
+    transition:.4s;
+    pointer-events:none;
+}
+
+.photo:hover::after,
+.photo:focus::after{
+    opacity:1;
+}
+
+.view-photo{
+    position:absolute;
+    z-index:2;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    padding:13px 20px;
+    border:1px solid rgba(214,176,106,.9);
+    background:rgba(0,0,0,.55);
+    color:#fff;
+    font-size:9px;
+    letter-spacing:3px;
+    white-space:nowrap;
+    opacity:0;
+    transition:.35s;
+    pointer-events:none;
+}
+
+.photo:hover .view-photo,
+.photo:focus .view-photo{
+    opacity:1;
+}
+
+.photo:focus{
+    outline:1px solid var(--gold);
+    outline-offset:-1px;
+}
+
+.photo:nth-child(1){
+    grid-column:span 5;
+    grid-row:span 2;
+}
+
+.photo:nth-child(2){
+    grid-column:span 3;
+}
+
+.photo:nth-child(3){
+    grid-column:span 4;
+}
+
+.photo:nth-child(4){
+    grid-column:span 4;
+}
+
+.photo:nth-child(5){
+    grid-column:span 3;
+}
+
+.photo:nth-child(6){
+    grid-column:span 5;
+}
+
+.photo:nth-child(7){
+    grid-column:span 4;
+}
+
+.photo:nth-child(8){
+    grid-column:span 4;
+}
+
+
+/* =========================================================
+   SHOWREEL
+========================================================= */
+
+.showreel-section{
+    background:#070707;
+}
+
+.showreel{
+    position:relative;
+    background:#111;
+    height:650px;
+    overflow:hidden;
+}
+
+.showreel video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.showreel-title{
+    position:absolute;
+    left:35px;
+    bottom:30px;
+    pointer-events:none;
+}
+
+.showreel-title small{
+    color:var(--gold);
+    font-size:9px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.showreel-title h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:45px;
+    font-weight:500;
+    margin-top:5px;
+}
+
+
+/* =========================================================
+   VIDEO GALLERY
+========================================================= */
+
+.videos{
+    background:#0b0b0b;
+}
+
+.video-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.video-card{
+    background:#111;
+}
+
+.video-card video{
+    width:100%;
+    height:470px;
+    object-fit:cover;
+    background:#050505;
+}
+
+.video-info{
+    padding:20px;
+    border-top:1px solid #222;
+}
+
+.video-info small{
+    color:var(--gold);
+    font-size:8px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.video-info h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:27px;
+    font-weight:500;
+    margin-top:6px;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills{
+    background:#070707;
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:100px;
+}
+
+.skill{
+    margin-bottom:28px;
+}
+
+.skill-top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+}
+
+.skill-top span{
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.skill-top span:last-child{
+    color:var(--gold);
+}
+
+.bar{
+    width:100%;
+    height:1px;
+    background:#292929;
+}
+
+.bar span{
+    display:block;
+    width:0;
+    height:100%;
+    background:var(--gold);
+    transition:1.4s;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.tag{
+    border:1px solid #303030;
+    padding:13px 17px;
+    color:#999;
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    transition:.3s;
+}
+
+.tag:hover{
+    color:var(--gold);
+    border-color:var(--gold);
+}
+
+
+/* =========================================================
+   CASTING
+========================================================= */
+
+.casting{
+    position:relative;
+    text-align:center;
+    background:
+        linear-gradient(
+            rgba(0,0,0,.87),
+            rgba(0,0,0,.95)
+        ),
+        url("profile.jpg") center/cover;
+}
+
+.casting-inner{
+    max-width:1000px;
+    margin:auto;
+}
+
+.casting h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(70px,11vw,140px);
+    line-height:.8;
+    font-weight:500;
+    margin-top:25px;
+}
+
+.casting h2 span{
+    color:var(--gold);
+}
+
+.casting p{
+    max-width:650px;
+    margin:35px auto;
+    color:#999;
+    line-height:1.9;
+    font-size:14px;
+}
+
+.casting-list{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.casting-list span{
+    border:1px solid #333;
+    padding:12px 18px;
+    font-size:9px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact{
+    background:#080808;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:100px;
+}
+
+.contact-title{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(65px,9vw,120px);
+    line-height:.78;
+    font-weight:500;
+}
+
+.contact-title span{
+    color:var(--gold);
+}
+
+.contact-text{
+    color:#888;
+    line-height:1.9;
+    font-size:14px;
+    margin:30px 0;
+    max-width:500px;
+}
+
+.phone{
+    display:block;
+    font-family:"Cormorant Garamond",serif;
+    font-size:34px;
+    margin-bottom:25px;
+}
+
+.phone:hover{
+    color:var(--gold);
+}
+
+.whatsapp{
+    background:#25D366;
+    border-color:#25D366;
+    color:#fff;
+}
+
+.whatsapp:hover{
+    background:#45e67e;
+    color:#000;
+}
+
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    background:#101010;
+    border:1px solid #292929;
+    outline:none;
+    color:#fff;
+    padding:17px;
+    font-size:12px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color:var(--gold);
+}
+
+.contact-form textarea{
+    min-height:150px;
+    resize:vertical;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    border-top:1px solid #202020;
+    padding:30px 7%;
+    display:flex;
+    justify-content:space-between;
+    color:#666;
+    font-size:9px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+footer a:hover{
+    color:var(--gold);
+}
+
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+.lightbox{
+    position:fixed;
+    inset:0;
+    z-index:99990;
+    background:rgba(0,0,0,.97);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:70px 25px 25px;
+    cursor:zoom-out;
+}
+
+.lightbox.active{
+    display:flex;
+}
+
+.lightbox img{
+    display:block;
+    width:auto;
+    height:auto;
+    max-width:min(92vw,1400px);
+    max-height:85vh;
+    object-fit:contain;
+    box-shadow:0 20px 80px rgba(0,0,0,.6);
+    cursor:default;
+}
+
+.close-lightbox{
+    position:absolute;
+    z-index:3;
+    top:18px;
+    right:25px;
+    width:48px;
+    height:48px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(255,255,255,.25);
+    color:#fff;
+    background:rgba(0,0,0,.5);
+    font-size:38px;
+    line-height:1;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.close-lightbox:hover{
+    color:var(--gold);
+    border-color:var(--gold);
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:1s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:70px;
+        right:5%;
+        width:230px;
+        padding:25px;
+        background:#111;
+        border:1px solid #292929;
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .nav-links.open{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .profile-grid,
+    .skills-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+        gap:55px;
+    }
+
+    .video-grid{
+        grid-template-columns:1fr;
+    }
+
+    .video-card video{
+        height:500px;
+    }
+
+    .showreel{
+        height:500px;
+    }
+}
+
+
+@media(max-width:600px){
+
+    .lightbox{
+        padding:60px 12px 15px;
+    }
+
+    .lightbox img{
+        max-width:96vw;
+        max-height:82vh;
+    }
+
+    .close-lightbox{
+        top:10px;
+        right:12px;
+        width:42px;
+        height:42px;
+        font-size:32px;
+    }
+
+    section{
+        padding:90px 6%;
+    }
+
+    .hero{
+        min-height:700px;
+    }
+
+    .hero-content{
+        padding:0 6% 70px;
+    }
+
+    .hero-title{
+        font-size:100px;
+        letter-spacing:-4px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        width:230px;
+    }
+
+    .profile-photo img{
+        height:500px;
+    }
+
+    .photo-grid{
+        grid-template-columns:1fr 1fr;
+        grid-auto-rows:180px;
+    }
+
+    .photo:nth-child(n){
+        grid-column:span 1;
+        grid-row:span 1;
+    }
+
+    .photo:nth-child(1){
+        grid-column:span 2;
+        grid-row:span 2;
+    }
+
+    .showreel{
+        height:350px;
+    }
+
+    .video-card video{
+        height:420px;
+    }
+
+    .section-head{
+        display:block;
+    }
+
+    .section-description{
+        margin-top:30px;
+    }
+
+    footer{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     LOADING SCREEN
+======================================================= -->
+
+<div class="loader" id="loader">
+
+    <div>
+
+        <h1>
+            SHAR<span>U</span>
+        </h1>
+
+        <div class="loader-line"></div>
+
+        <small>
+            CHILD ARTIST
+        </small>
+
+    </div>
+
+</div>
+
+
+<!-- =======================================================
+     NAVBAR
+======================================================= -->
+
+<header class="navbar" id="navbar">
+
+    <a href="#home" class="logo">
+        S<span>.</span>
+    </a>
+
+    <nav>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#gallery">Photos</a></li>
+            <li><a href="#showreel">Showreel</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#casting">Casting</a></li>
+            <li><a href="#contact">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+    <div class="menu" id="menu">
+        ☰
+    </div>
+
+</header>
+
+
+<!-- =======================================================
+     HERO SECTION
+======================================================= -->
+
+<section class="hero" id="home">
+
+    <!--
+        ==================================================
+        HERO IMAGE
+
+        Put your best Sharu photo in the same folder
+        and name it:
+
+        hero.jpg
+
+        ==================================================
+    -->
+
+    <div class="hero-image"></div>
+
+
+    <div class="hero-content reveal">
+
+        <div class="hero-label">
+            Child Artist • Actor • Performer
+        </div>
+
+        <h1 class="hero-title">
+            SHA<span>RU</span>
+        </h1>
+
+        <p class="hero-subtitle">
+
+            A young child artist from Hyderabad with a
+            passion for acting, expressions, performance
+            and bringing characters to life.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#showreel" class="btn gold">
+                Watch Showreel
+            </a>
+
+            <a href="#contact" class="btn">
+                Casting Enquiry
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="scroll-text">
+        Scroll to explore ↓
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     PROFILE
+======================================================= -->
+
+<section class="profile" id="profile">
+
+    <div class="section-head reveal">
+
+        <div>
+
+            <div class="section-number">
+                01 — Artist Profile
+            </div>
+
+            <h2 class="section-title">
+                Meet <span>Sharu</span>
+            </h2>
+
+        </div>
+
+        <p class="section-description">
+
+            A dedicated child-artist portfolio created for
+            casting directors, production teams,
+            photographers and creative collaborations.
+
+        </p>
+
+    </div>
+
+
+    <div class="profile-grid">
+
+
+        <div class="profile-photo reveal">
+
+            <!-- PROFILE IMAGE -->
+
+            <img
+                src="profile.jpg"
+                alt="Sharu Child Artist"
+            >
+
+        </div>
+
+
+        <div class="profile-text reveal">
+
+            <h3>
+
+                Young talent.
+                <br>
+                Natural expressions.
+                <br>
+                Big imagination.
+
+            </h3>
+
+            <p>
+
+                Sharu is an 8-year-old child artist from
+                Manikonda, Hyderabad, with an interest in
+                acting, performance, creative storytelling
+                and character roles.
+
+            </p>
+
+            <p>
+
+                Explore the portfolio, photographs and
+                performance videos to discover Sharu's
+                screen presence.
+
+            </p>
+
+
+            <div class="details">
+
+
+                <div class="detail">
+
+                    <small>Name</small>
+
+                    <strong>
+                        Sharu
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <small>Artist Type</small>
+
+                    <strong>
+                        Child Artist
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <small>Age</small>
+
+                    <strong>
+                        8 Years
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <small>Height</small>
+
+                    <strong>
+                        130 cm
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <small>Weight</small>
+
+                    <strong>
+                        34 kg
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <small>Location</small>
+
+                    <strong>
+                        Manikonda, Hyderabad
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     ABOUT
+======================================================= -->
+
+<section class="about-strip">
+
+    <div class="reveal">
+
+        <div class="section-number">
+            02 — About
+        </div>
+
+        <h2>
+
+            Every character
+            <br>
+
+            begins with <span>imagination.</span>
+
+        </h2>
+
+        <p>
+
+            Sharu's portfolio showcases photographs,
+            performances and videos for suitable creative,
+            casting and child-artist opportunities.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     PHOTO GALLERY
+======================================================= -->
+
+<section class="gallery" id="gallery">
+
+    <div class="section-head reveal">
+
+        <div>
+
+            <div class="section-number">
+                03 — Photography
+            </div>
+
+            <h2 class="section-title">
+                Sharu in <span>Focus</span>
+            </h2>
+
+        </div>
+
+        <p class="section-description">
+
+            Replace the image files below with Sharu's
+            real photographs.
+
+        </p>
+
+    </div>
+
+
+    <div class="photo-grid">
+
+
+        <div class="photo reveal" data-image="photo1.jpg" tabindex="0" role="button" aria-label="View Sharu photo 1">
+            <img src="photo1.jpg" alt="Sharu photo">
+            <span class="view-photo">VIEW PHOTO</span>
+        </div>
+
+
+        <div class="photo reveal" data-image="photo2.jpg" tabindex="0" role="button" aria-label="View Sharu photo 2">
+            <img src="photo2.jpg" alt="Sharu photo">
+            <span class="view-photo">VIEW PHOTO</span>
+        </div>
+
+
+        <div class="photo reveal" data-image="photo3.jpg" tabindex="0" role="button" aria-label="View Sharu photo 3">
+            <img src="photo3.jpg" alt="Sharu photo">
+            <span class="view-photo">VIEW PHOTO</span>
+        </div>
+
+
+        <div class="photo reveal" data-image="photo4.jpg" tabindex="0" role="button" aria-label="View Sharu photo 4">
+            <img src="photo4.jpg" alt="Sharu photo">
+            <span class="view-photo">VIEW PHOTO</span>
+        </div>
+
+
+        <div class="photo reveal" data-image="photo5.jpg" tabindex="0" role="button" aria-label="View Sharu photo 5">
+            <img src="photo5.jpg" alt="Sharu photo">
+            <span class="view-photo">VIEW PHOTO</span>
+        </div>
+
+
+        <div class="photo reveal" data-image="photo6.jpg" tabindex="0" role="button" aria-label="View Sharu photo 6">
+            <img src="photo6.jpg" alt="Sharu photo">
+            <span class="view-photo">VIEW PHOTO</span>
+        </div>
+
+
+        <div class="photo reveal" data-image="photo7.jpg" tabindex="0" role="button" aria-label="View Sharu photo 7">
+            <img src="photo7.jpg" alt="Sharu photo">
+            <span class="view-photo">VIEW PHOTO</span>
+        </div>
+
+
+        <div class="photo reveal" data-image="photo8.jpg" tabindex="0" role="button" aria-label="View Sharu photo 8">
+            <img src="photo8.jpg" alt="Sharu photo">
+            <span class="view-photo">VIEW PHOTO</span>
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     SHOWREEL
+======================================================= -->
+
+<section class="showreel-section" id="showreel">
+
+    <div class="section-head reveal">
+
+        <div>
+
+            <div class="section-number">
+                04 — Featured Video
+            </div>
+
+            <h2 class="section-title">
+                <span>Showreel</span>
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="showreel reveal">
+
+        <!-- SHOWREEL VIDEO -->
+
+        <video
+            controls
+            playsinline
+            preload="metadata"
+            poster="poster.jpg"
+        >
+
+            <source
+                src="showreel.mp4"
+                type="video/mp4"
+            >
+
+            Your browser does not support video.
+
+        </video>
+
+
+        <div class="showreel-title">
+
+            <small>
+                Featured Performance
+            </small>
+
+            <h3>
+                Sharu — Showreel
+            </h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     VIDEO GALLERY
+======================================================= -->
+<!--
+<section class="videos" id="videos">
+
+    <div class="section-head reveal">
+
+        <div>
+
+            <div class="section-number">
+                05 — Performance
+            </div>
+
+            <h2 class="section-title">
+                Video <span>Gallery</span>
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="video-grid">
+
+
+        <div class="video-card reveal">
+
+            <video controls playsinline>
+
+                <source
+                    src="performance1.mp4"
+                    type="video/mp4"
+                >
+
+            </video>
+
+            <div class="video-info">
+
+                <small>
+                    Performance 01
+                </small>
+
+                <h3>
+                    Acting Performance
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="video-card reveal">
+
+            <video controls playsinline>
+
+                <source
+                    src="performance2.mp4"
+                    type="video/mp4"
+                >
+
+            </video>
+
+            <div class="video-info">
+
+                <small>
+                    Performance 02
+                </small>
+
+                <h3>
+                    Expressions
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="video-card reveal">
+
+            <video controls playsinline>
+
+                <source
+                    src="performance3.mp4"
+                    type="video/mp4"
+                >
+
+            </video>
+
+            <div class="video-info">
+
+                <small>
+                    Performance 03
+                </small>
+
+                <h3>
+                    Character Performance
+                </h3>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+-->
+
+<!-- =======================================================
+     SKILLS
+======================================================= -->
+
+<section class="skills" id="skills">
+
+    <div class="section-head reveal">
+
+        <div>
+
+            <div class="section-number">
+                06 — Artist Skills
+            </div>
+
+            <h2 class="section-title">
+                Skills & <span>Interests</span>
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+
+        <div class="reveal">
+
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <span>Acting</span>
+                    <span>★</span>
+
+                </div>
+
+                <div class="bar">
+                    <span data-width="95%"></span>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <span>Expressions</span>
+                    <span>★</span>
+
+                </div>
+
+                <div class="bar">
+                    <span data-width="95%"></span>
+                </div>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <span>Dialogue Delivery</span>
+                    <span>★</span>
+
+                </div>
+
+                <div class="bar">
+                    <span data-width="90%"></span>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="tags reveal">
+
+            <span class="tag">Acting</span>
+            <span class="tag">Expressions</span>
+            <span class="tag">Dialogue</span>
+            <span class="tag">Dance</span>
+            <span class="tag">Modelling</span>
+            <span class="tag">Comedy</span>
+            <span class="tag">Drama</span>
+            <span class="tag">Character Roles</span>
+            <span class="tag">Advertisements</span>
+            <span class="tag">Short Films</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     CASTING
+======================================================= -->
+
+<section class="casting" id="casting">
+
+    <div class="casting-inner reveal">
+
+        <div class="section-number">
+            07 — Casting & Collaboration
+        </div>
+
+        <h2>
+
+            Made for the
+            <br>
+
+            <span>Screen.</span>
+
+        </h2>
+
+        <p>
+
+            For suitable child-artist opportunities,
+            creative projects and collaborations,
+            please contact the parent / guardian.
+
+        </p>
+
+
+        <div class="casting-list">
+
+            <span>Films</span>
+            <span>Short Films</span>
+            <span>Web Series</span>
+            <span>Advertisements</span>
+            <span>Photoshoots</span>
+            <span>Music Videos</span>
+            <span>Brand Projects</span>
+            <span>Events</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     CONTACT
+======================================================= -->
+
+<section class="contact" id="contact">
+
+    <div class="contact-grid">
+
+
+        <div class="reveal">
+
+            <div class="section-number">
+                08 — Contact
+            </div>
+
+            <h2 class="contact-title">
+
+                Let's create
+                <br>
+
+                <span>something.</span>
+
+            </h2>
+
+
+            <p class="contact-text">
+
+                For casting opportunities, advertisements,
+                films, web projects, photoshoots and
+                collaborations, please contact
+                Sharu's parent / guardian.
+
+            </p>
+
+
+            <a
+                class="phone"
+                href="tel:+918179848275"
+            >
+                +91 81798 48275
+            </a>
+
+
+            <a
+                class="btn whatsapp"
+                target="_blank"
+                href="https://wa.me/918179848275?text=Hello%2C%20I%20am%20interested%20in%20Sharu%20for%20a%20child%20artist%20project."
+            >
+                WhatsApp Casting Enquiry
+            </a>
+
+        </div>
+
+
+        <form
+            class="contact-form reveal"
+            id="contactForm"
+        >
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="text"
+                id="company"
+                placeholder="Production / Company"
+            >
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Your Phone"
+            >
+
+            <textarea
+                id="message"
+                placeholder="Tell us about your project..."
+                required
+            ></textarea>
+
+            <button
+                type="submit"
+                class="btn gold"
+            >
+                Send Enquiry on WhatsApp
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
+<footer>
+
+    <div>
+        © 2026 SHARU — CHILD ARTIST
+    </div>
+
+    <div>
+        Manikonda, Hyderabad
+    </div>
+
+</footer>
+
+
+<!-- =======================================================
+     IMAGE LIGHTBOX
+======================================================= -->
+
+<div class="lightbox" id="lightbox">
+
+    <div
+        class="close-lightbox"
+        id="closeLightbox"
+    >
+        ×
+    </div>
+
+    <img
+        id="lightboxImage"
+        src=""
+        alt="Sharu"
+    >
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   IMPORTANT FILE NAMES
+=========================================================
+
+   Put these files in the SAME folder as index.html:
+
+   hero.jpg
+   profile.jpg
+   poster.jpg
+
+   photo1.jpg
+   photo2.jpg
+   photo3.jpg
+   photo4.jpg
+   photo5.jpg
+   photo6.jpg
+   photo7.jpg
+   photo8.jpg
+
+   showreel.mp4
+   performance1.mp4
+   performance2.mp4
+   performance3.mp4
+
+========================================================= */
+
+
+/* LOADER */
+
+window.addEventListener("load",function(){
+
+    setTimeout(function(){
+
+        document
+            .getElementById("loader")
+            .classList
+            .add("hide");
+
+    },900);
+
+});
+
+
+/* NAVBAR */
+
+const navbar =
+    document.getElementById("navbar");
+
+window.addEventListener("scroll",function(){
+
+    if(window.scrollY > 50){
+
+        navbar.classList.add("scrolled");
+
+    }else{
+
+        navbar.classList.remove("scrolled");
+
+    }
+
+});
+
+
+/* MOBILE MENU */
+
+const menu =
+    document.getElementById("menu");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+menu.addEventListener("click",function(){
+
+    navLinks.classList.toggle("open");
+
+});
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        navLinks.classList.remove("open");
+
+    });
+
+});
+
+
+/* REVEAL */
+
+const observer =
+    new IntersectionObserver(
+        function(entries){
+
+            entries.forEach(function(entry){
+
+                if(entry.isIntersecting){
+
+                    entry.target
+                        .classList
+                        .add("show");
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(function(element){
+
+    observer.observe(element);
+
+});
+
+
+/* SKILL BARS */
+
+const skillObserver =
+    new IntersectionObserver(
+        function(entries){
+
+            entries.forEach(function(entry){
+
+                if(entry.isIntersecting){
+
+                    entry.target.style.width =
+                        entry.target.dataset.width;
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.5
+        }
+    );
+
+
+document
+.querySelectorAll(".bar span")
+.forEach(function(element){
+
+    skillObserver.observe(element);
+
+});
+
+
+/* LIGHTBOX */
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const closeLightbox = document.getElementById("closeLightbox");
+const galleryPhotos = document.querySelectorAll(".photo");
+
+function openLightbox(photo){
+
+    const image = photo.querySelector("img");
+
+    if(!image) return;
+
+    // Use the original image path instead of relying on a generated/display URL.
+    const fullImage = photo.dataset.image || image.getAttribute("src");
+
+    lightboxImage.src = fullImage;
+    lightboxImage.alt = image.getAttribute("alt") || "Sharu photo";
+
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closeImageLightbox(){
+
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "";
+
+    // Clear the image after closing so it does not remain loaded behind the overlay.
+    setTimeout(function(){
+        if(!lightbox.classList.contains("active")){
+            lightboxImage.src = "";
+        }
+    }, 250);
+}
+
+galleryPhotos.forEach(function(photo){
+
+    photo.addEventListener("click", function(event){
+
+        // Do not close/open twice if the close button is ever nested here.
+        event.stopPropagation();
+        openLightbox(photo);
+
+    });
+
+    photo.addEventListener("keydown", function(event){
+
+        if(event.key === "Enter" || event.key === " "){
+
+            event.preventDefault();
+            openLightbox(photo);
+
+        }
+
+    });
+
+});
+
+closeLightbox.addEventListener("click", function(event){
+
+    event.stopPropagation();
+    closeImageLightbox();
+
+});
+
+lightboxImage.addEventListener("click", function(event){
+
+    event.stopPropagation();
+
+});
+
+lightbox.addEventListener("click", function(event){
+
+    if(event.target === lightbox){
+        closeImageLightbox();
+    }
+
+});
+
+document.addEventListener("keydown", function(event){
+
+    if(event.key === "Escape" && lightbox.classList.contains("active")){
+        closeImageLightbox();
+    }
+
+});
+
+
+/* CONTACT FORM → WHATSAPP */
+
+document
+.getElementById("contactForm")
+.addEventListener(
+    "submit",
+    function(event){
+
+        event.preventDefault();
+
+
+        const name =
+            document.getElementById("name").value;
+
+        const company =
+            document.getElementById("company").value;
+
+        const phone =
+            document.getElementById("phone").value;
+
+        const message =
+            document.getElementById("message").value;
+
+
+        const whatsappMessage =
+
+`Hello, I am ${name}.
+
+Production / Company:
+${company}
+
+Phone:
+${phone}
+
+Project Details:
+${message}
+
+I am interested in Sharu for a child-artist opportunity.`;
+
+
+        window.open(
+            "https://wa.me/918179848275?text=" +
+            encodeURIComponent(whatsappMessage),
+            "_blank"
+        );
+
+    }
+);
+
+</script>
+
+</body>
+</html>
